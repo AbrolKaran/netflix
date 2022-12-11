@@ -1,12 +1,13 @@
 from django.contrib import admin
 
 # Register your models here.
+from tags.admin import TaggedItemInLine
 from .models import MovieProxy, TVShowProxy, TVShowSeasonProxy, Playlist, PlaylistItem
 
 
 class MovieProxyAdmin(admin.ModelAdmin):
     list_display = ['title']
-    fields = ['title','description','state','video','slug']
+    fields = ['title','description','state', 'category', 'video','slug']
     class Meta:
         model = MovieProxy
     def get_queryset(self,request):
@@ -36,9 +37,9 @@ class TVShowSeasonProxyInline(admin.TabularInline):
     fields = ['order','title','state']
 
 class TVShowProxyAdmin(admin.ModelAdmin):
-    inlines = [TVShowSeasonProxyInline]
+    inlines = [TaggedItemInLine, TVShowSeasonProxyInline]
     list_display = ['title']
-    fields = ['title','description','state','video','slug']
+    fields = ['title','description','state','category','video','slug']
     class Meta:
         model = TVShowProxy
     def get_queryset(self,request):
