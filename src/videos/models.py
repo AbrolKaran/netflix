@@ -28,7 +28,7 @@ class Video(models.Model):
     slug = models.SlugField(blank=True, null=True) # 'this-is-my-video'
     video_id = models.CharField(max_length=220, unique=True)
     video_url1 = models.CharField(max_length=500,default="https://mega.nz/embed/CexREQpY#22QCIcvQ0NGEzoaF9Q_yqAqvxb_hhvTpZuTmuaTomoY")
-    video_url1 = models.CharField(max_length=500,default="https://mega.nz/embed/CexREQpY#22QCIcvQ0NGEzoaF9Q_yqAqvxb_hhvTpZuTmuaTomoY")
+    video_url2 = models.CharField(max_length=500,default="https://mega.nz/embed/CexREQpY#22QCIcvQ0NGEzoaF9Q_yqAqvxb_hhvTpZuTmuaTomoY")
     active = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

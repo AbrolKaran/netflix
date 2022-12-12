@@ -12,6 +12,8 @@ from categories.models import Category
 from ratings.models import Rating
 from tags.models import TaggedItem
 from videos.models import Video
+import validators
+import urllib.request
 
 
 class PlaylistQuerySet(models.QuerySet):
@@ -115,9 +117,13 @@ class Playlist(models.Model):
         """
         get main video id to render video for users
         """
-        if self.video is None:
-            return None
-        return self.video.get_video_id()
+        # if self.video is None:
+        #     return None
+        try:
+            urllib.request.urlopen(self.video.video_url1).getcode()
+            return self.video.video_url1
+        except:
+            return self.video.video_url2
 
     def get_clips(self):
         """
