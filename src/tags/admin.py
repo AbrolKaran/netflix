@@ -6,7 +6,7 @@ from django.contrib import admin
 
 from .models import TaggedItem
 
-class TaggedItemInLine(GenericTabularInline): #admin.TabularInline
+class TaggedItemInline(GenericTabularInline): #admin.TabularInline
     model = TaggedItem
     extra = 0
 
