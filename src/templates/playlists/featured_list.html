@@ -12,9 +12,9 @@
 {% block content %}
 
 {% for instance in object_list %}
-        <div>
-            <h3>{{ instance.title }} </h3>
-            <p>{{ instance.description }}</p>
+        <div style="color: red;">
+            <h3 style="color: red;">{{ instance.title }} </h3>
+            <p style="color: red;">{{ instance.description }}</p>
             {% for item in instance.get_related_items %}
                 {% if item.related.is_movie %}
                 {% include 'playlists/cards/movie.html' with movie=item.related %}

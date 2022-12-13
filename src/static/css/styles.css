@@ -5,6 +5,7 @@
   background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
 } */
 
+
 .topnav {
     background-color: black;
     /* overflow: hidden; */
@@ -124,3 +125,5 @@
     transition: 1s;
     transition-delay: 0.75s;
 }
+
+

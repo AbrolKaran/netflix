@@ -6,10 +6,12 @@
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
         <title>
-            {% block head_title %}DjangoFlix{% endblock %}
+            {% block head_title %} Neflix {% endblock %}
         </title>
 
     </head>
+
+    
 
     <body style="background-color:black;">
             <div>
@@ -18,6 +20,7 @@
                     <a class="active" href="/">Home</a>
                     <a href="/movies">Movies</a>
                     <a href="/shows">TV Shows</a>
+                    <a href="/categories">Categories</a>
                 </div>
             </div>
 
@@ -31,6 +34,8 @@
         <!-- <div>
             <img style="transform: scale(0.9); padding-left: 15px;" src="{% static 'images/cloud.png' %}" alt="logo" />
         </div> -->
+
+        
 
         {% block content %}
         {% endblock content %}

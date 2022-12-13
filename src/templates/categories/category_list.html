@@ -10,12 +10,12 @@
 
 {% block content %}
 
-<h1>Category</h1>
+<h1 style="color: rgb(238, 75, 43); text-align: center; padding-top: 50px; text-transform: uppercase;">Categories</h1>
 
 
 {% for instance in object_list %}
-<div>
-    <h3><a href="{{ instance.get_absolute_url }}"> {{ instance.title }}</a></h3>
+<div style="padding-left: 20px; padding-right: 20px;">
+    <h3><a style="color: white;" href="{{ instance.get_absolute_url }}"> {{ instance.title }}</a></h3>
 </div>
 {% endfor %}
 
