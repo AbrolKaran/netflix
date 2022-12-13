@@ -10,22 +10,22 @@
 
 {% block content %}
 
-<h1>{{ object.title }}</h1>
-<div>
+<h1 style="color: rgb(238, 75, 43); text-align: center; padding-top: 50px; text-transform: uppercase;">{{ object.title }}</h1>
+<div style="color: white; text-align: center;">
     {% rating object=object %}
 </div>
-<div>
+<div style="color: white; margin-left: 50px; margin-right: 50px;">
 {{ object.slug }} {{ object.get_short_display }}
 
 
-<h3>Trailer</h3>
+<h3 style="color: white; text-align: center;">Trailer</h3>
 {% include 'videos/embed.html' with video_id=object.get_video_id %}
 
 
 
 {% for season in object.seasons %}
 
-<li>{{ forloop.counter }} - <a href='{{ season.get_absolute_url }}'>{{ season.title }} </a></li>
+<li style="color: white; margin-left: 50px; margin-right: 50px;">{{ forloop.counter }} - <a href='{{ season.get_absolute_url }}'>{{ season.title }} </a></li>
 {% endfor %}
 
 </div>

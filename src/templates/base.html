@@ -1,17 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html>
     <head>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
         <title>
-            {% block head_title %}Neflix{% endblock %}
+            {% block head_title %}DjangoFlix{% endblock %}
         </title>
 
     </head>
-    <body>
-        <form method='GET' action='/search/'>
-            <input type='text' name='q' placeholder='Search for a movie or tv show'>
-            <button type='submit'>Search</button>
+
+    <body style="background-color:black;">
+            <div>
+                <div class="topnav" style="font-family: sans-serif;">
+                    <a href="/"> <img style = "transform: scale(0.2); margin-top: -82.5px; margin-bottom: -60px; margin-left: -135px; margin-right: -120px;" src="{% static 'images/logo.png' %}" alt="logo" /> </a>
+                    <a class="active" href="/">Home</a>
+                    <a href="/movies">Movies</a>
+                    <a href="/shows">TV Shows</a>
+                </div>
+            </div>
+
+
+        <div style="text-align: right; padding-top: 8px;">
+            <form method='GET' action='/search/' style="text-align: center; display: inline-block;">
+                <input type='text' name='q' placeholder='Search For Something' style="font-size: 16px; background-color: black; border-color: rgb(238, 75, 43); color: white;">
+                <button class="butt" type='submit'>Search</button>
         </form>
+        </div>
+        <!-- <div>
+            <img style="transform: scale(0.9); padding-left: 15px;" src="{% static 'images/cloud.png' %}" alt="logo" />
+        </div> -->
 
         {% block content %}
         {% endblock content %}

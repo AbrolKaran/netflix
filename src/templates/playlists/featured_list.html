@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block head_title %}
     {% if title %}
@@ -25,5 +26,9 @@
 
         </div>
 {% endfor %}
+
+<div>
+    <img style="transform: scale(0.9); padding-left: 15px;" src="{% static 'images/cloud.png' %}" alt="logo" />
+</div>
 
 {% endblock %}

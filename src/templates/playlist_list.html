@@ -19,8 +19,8 @@
 
 {% for instance in object_list %}
 <div>
-    <h3>{{ instance.title }} </h3>
-    <p>{{ instance.description }}</p>
+    <h3 style="color: red;">{{ instance.title }} </h3>
+    <p style="color: white;">{{ instance.description }}</p>
     {% if instance.is_movie %}
         {% include 'playlists/cards/movie.html' with movie=instance %}
     {% elif instance.is_show %}
