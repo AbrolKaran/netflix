@@ -257,6 +257,18 @@ class PlaylistItem(models.Model):
     class Meta:
         ordering = ['order', '-timestamp']
 
+    def get_video_id(self):
+        """
+        get main video id to render video for users
+        """
+        # if self.video is None:
+        #     return None
+        try:
+            urllib.request.urlopen(self.video.video_url1).getcode()
+            return self.video.video_url1
+        except:
+            return self.video.video_url2
+
 
 def pr_limit_choices_to():
     return Q(type=Playlist.PlaylistTypeChoices.MOVIE) |  Q(type=Playlist.PlaylistTypeChoices.SHOW)

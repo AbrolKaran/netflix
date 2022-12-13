@@ -22,7 +22,6 @@
 <h3>Episodes</h3>
 {% for playlist_item in object.get_episodes %}
 <h5>Episode {{ playlist_item.order }}</h5>
-<iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/nORzEADD#Vll4dCCgHw8FRce9pgPkVRgBry9FbPN5v5-USlNmR1A" allowfullscreen ></iframe>
-    {% include 'videos/embed.html' with video_id=playlist_item.video.get_video_id %}
+    {% include 'videos/embed.html' with video_id=playlist_item.get_video_id %}
 {% endfor %}
 {% endblock %}

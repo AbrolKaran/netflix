@@ -38,8 +38,8 @@ class Video(models.Model):
     objects = VideoManager()
 
     def get_video_id(self):
-        if not self.is_published:
-            return None
+        # if not self.is_published:
+        #     return None
         return self.video_id
     
     @property
