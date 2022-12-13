@@ -10,11 +10,11 @@ from neflix.db.receivers import publish_state_pre_save, unique_slugify_pre_save
 
 from categories.models import Category
 from ratings.models import Rating
-from tags.models import TaggedItem
+# from tags.models import TaggedItem
 from videos.models import Video
+from covers.models import Cover
 import validators
 import urllib.request
-
 
 class PlaylistQuerySet(models.QuerySet):
     def published(self):
@@ -30,8 +30,7 @@ class PlaylistQuerySet(models.QuerySet):
             Q(title__icontains=query) |
             Q(description__icontains=query) | 
             Q(category__title__icontains=query) |
-            Q(category__slug__icontains=query) |
-            Q(tags__tag__icontains=query)
+            Q(category__slug__icontains=query) 
         ).distinct()
 
     def movie_or_show(self):
@@ -73,8 +72,9 @@ class Playlist(models.Model):
     updated = models.DateTimeField(auto_now=True)
     state = models.CharField(max_length=2, choices=PublishStateOptions.choices, default=PublishStateOptions.DRAFT)
     publish_timestamp = models.DateTimeField(auto_now_add=False, auto_now=False, blank=True, null=True)
-    tags = GenericRelation(TaggedItem, related_query_name='playlist')
+    # tags = GenericRelation(TaggedItem, related_query_name='playlist')
     ratings = GenericRelation(Rating, related_query_name='playlist')
+    cover = models.ForeignKey(Cover,null=True,on_delete=models.SET_NULL)
     objects = PlaylistManager()
     
     def __str__(self):

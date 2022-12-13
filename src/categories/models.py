@@ -5,7 +5,7 @@ from django.db.models.signals import pre_save
 
 from neflix.db.receivers import unique_slugify_pre_save
 
-from tags.models import TaggedItem
+# from tags.models import TaggedItem
 
 # Create your models here.
 class Category(models.Model):
@@ -14,7 +14,7 @@ class Category(models.Model):
     active = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    tags = GenericRelation(TaggedItem, related_query_name='category')
+    # tags = GenericRelation(TaggedItem, related_query_name='category')
 
     def get_absolute_url(self):
         return f"/category/{self.slug}/"
