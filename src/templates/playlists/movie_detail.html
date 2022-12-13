@@ -6,24 +6,22 @@
 {% endblock %}
 
 
-
-
 {% block content %}
 
-<h1>{{ object.title }}</h1>
+<h1 style="color: rgb(238, 75, 43); text-align: center; padding-top: 50px; text-transform: uppercase;">{{ object.title }}</h1>
 
-<div>
+<div style="color: white; text-align: center;">
     {% rating object=object %}
 </div>
    
-<div>
+<div style ="color: white; margin-left: 50px; margin-right: 50px;">
 {{ object.slug }} {{ object.get_short_display }}
 
 <br>
 
 {% include 'videos/embed.html' with video_id=object.get_video_id %}
 
-<p>{{ object.description }}</p>
+<p style="color: white;"></p>>{{ object.description }}</p>
 
 </div>
 {% endblock %}
