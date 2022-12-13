@@ -74,7 +74,7 @@ class Playlist(models.Model):
     publish_timestamp = models.DateTimeField(auto_now_add=False, auto_now=False, blank=True, null=True)
     # tags = GenericRelation(TaggedItem, related_query_name='playlist')
     ratings = GenericRelation(Rating, related_query_name='playlist')
-    cover = models.ForeignKey(Cover,null=True,on_delete=models.SET_NULL)
+    # cover = models.ForeignKey(Cover,null=True,on_delete=models.SET_NULL)
     objects = PlaylistManager()
     
     def __str__(self):

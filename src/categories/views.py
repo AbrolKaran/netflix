@@ -15,7 +15,7 @@ class CategoryListView(ListView):
 
 class CategoryDetailView(PlaylistMixin, ListView):
     """
-    Another list view for Playlist
+    Playlist view
     """
     def get_context_data(self):
         context = super().get_context_data()

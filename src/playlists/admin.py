@@ -23,7 +23,7 @@ class SeasonEpisodeInline(admin.TabularInline):
     extra = 0
 
 class TVShowSeasonProxyAdmin(admin.ModelAdmin):
-    # inlines = [TaggedItemInline, SeasonEpisodeInline]
+    inlines = [SeasonEpisodeInline]
     list_display = ['title', 'parent']
     class Meta:
         model = TVShowSeasonProxy
@@ -40,7 +40,7 @@ class TVShowSeasonProxyInline(admin.TabularInline):
     fields = ['order', 'title', 'state']
 
 class TVShowProxyAdmin(admin.ModelAdmin):
-    # inlines = [TaggedItemInline, TVShowSeasonProxyInline]
+    inlines = [TVShowSeasonProxyInline]
     list_display = ['title']
     fields = ['title', 'description', 'state', 'category', 'video', 'slug']
     class Meta:
